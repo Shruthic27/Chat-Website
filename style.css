@@ -8,7 +8,10 @@ body{
     height: 600px;
     width: 800px;
 }
-
+#I{
+  width: 100px;
+  height: 100px;
+}
 html{
     height: 100%;   
    }

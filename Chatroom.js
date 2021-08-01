@@ -13,10 +13,20 @@ var firebaseConfig = {
 
   N=localStorage.getItem("Name")
   document.getElementById("n").innerHTML="Welcome "+N
-
+  function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
+    Room_names = childKey;
+   //Start code
+   row= "<div id="+Room_names+" onclick=ar(this.id) class='room_name'>"+Room_names+"</div> <hr>"
+   document.getElementById("output").innerHTML+=row
+   //End code
+   });});}
 var Rn=""
 function srn(){
 Rn= document.getElementById("name").value
 firebase.database().ref("/").child(Rn).update({purpose:"testing"})
 localStorage.setItem("RoomName",Rn)
 }
+function ar(room){
+  localStorage.setItem("RoomName",room)
+  window.location="chatpage.html"
+  }
