@@ -30,3 +30,4 @@ function ar(room){
   localStorage.setItem("RoomName",room)
   window.location="chatpage.html"
   }
+  document.getElementById("output").innerHTML=getData()
